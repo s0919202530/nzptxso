@@ -3,11 +3,18 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2012 年 11 月 27 日 15:10
+-- 生成日期: 2012 年 11 月 29 日 13:18
 -- 服务器版本: 5.5.28
 -- PHP 版本: 5.3.10-1ubuntu3.4
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- 数据库: `lunch`
@@ -61,14 +68,15 @@ CREATE TABLE IF NOT EXISTS `lunchGroup` (
   `userIp` text NOT NULL,
   `overTime` varchar(5) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- 转存表中的数据 `lunchGroup`
 --
 
 INSERT INTO `lunchGroup` (`id`, `primaryName`, `shopName`, `orderDate`, `userIp`, `overTime`) VALUES
-(1, '小胖', '飽足', '2012-11-27', '134.208.10.231', '11:30');
+(1, '小胖', '飽足', '2012-11-27', '134.208.10.231', '11:30'),
+(2, '小胖', '全記', '2012-11-29', '134.208.10.231', '11:30');
 
 -- --------------------------------------------------------
 
@@ -229,38 +237,38 @@ INSERT INTO `menu` (`id`, `shopName`, `foodName`, `foodPrice`, `filename`, `file
 (131, '大上海', '蛋炒 飯/麵/河粉', 55, NULL, NULL, NULL, NULL, '127.0.0.1'),
 (132, '全記', '蛋香炒飯', 55, NULL, NULL, NULL, NULL, '10.0.2.2'),
 (133, '全記', '三色炒飯', 55, NULL, NULL, NULL, NULL, '10.0.2.2'),
-(134, '全記', '清素炒飯', 55, NULL, NULL, NULL, NULL, '10.0.2.2'),
+(134, '全記', '清素炒飯', 60, NULL, NULL, NULL, NULL, '10.0.2.2'),
 (135, '全記', '肉絲炒飯', 60, NULL, NULL, NULL, NULL, '10.0.2.2'),
 (136, '全記', '香腸炒飯', 65, NULL, NULL, NULL, NULL, '10.0.2.2'),
 (137, '全記', '蝦仁炒飯', 70, NULL, NULL, NULL, NULL, '10.0.2.2'),
 (138, '全記', '夏威夷炒飯', 75, NULL, NULL, NULL, NULL, '10.0.2.2'),
 (139, '全記', '麻婆豆腐炒飯', 65, NULL, NULL, NULL, NULL, '10.0.2.2'),
 (140, '全記', '糖醋雞丁炒飯', 65, NULL, NULL, NULL, NULL, '10.0.2.2'),
-(141, '全記', '咖哩雞丁炒飯', 65, NULL, NULL, NULL, NULL, '10.0.2.2'),
+(141, '全記', '咖哩雞丁炒飯', 70, NULL, NULL, NULL, NULL, '10.0.2.2'),
 (142, '全記', '青椒牛肉炒飯', 70, NULL, NULL, NULL, NULL, '10.0.2.2'),
 (143, '全記', '鰹魚海味炒飯', 75, NULL, NULL, NULL, NULL, '10.0.2.2'),
 (144, '全記', '火腿蝦仁炒飯', 75, NULL, NULL, NULL, NULL, '10.0.2.2'),
 (145, '全記', '糖鳳蝦仁炒飯', 75, NULL, NULL, NULL, NULL, '10.0.2.2'),
 (146, '全記', '宮保雞丁炒飯', 65, NULL, NULL, NULL, NULL, '10.0.2.2'),
-(147, '全記', '宮保香腸炒飯', 65, NULL, NULL, NULL, NULL, '10.0.2.2'),
+(147, '全記', '宮保香腸炒飯', 70, NULL, NULL, NULL, NULL, '10.0.2.2'),
 (148, '全記', '宮保牛肉炒飯', 70, NULL, NULL, NULL, NULL, '10.0.2.2'),
 (149, '全記', '宮保羊肉炒飯', 70, NULL, NULL, NULL, NULL, '10.0.2.2'),
 (150, '全記', '沙茶雞丁炒飯', 65, NULL, NULL, NULL, NULL, '10.0.2.2'),
 (151, '全記', '沙茶牛肉炒飯', 70, NULL, NULL, NULL, NULL, '10.0.2.2'),
 (152, '全記', '沙茶羊肉炒飯', 70, NULL, NULL, NULL, NULL, '10.0.2.2'),
-(153, '全記', '泡菜肉絲炒飯', 70, NULL, NULL, NULL, NULL, '10.0.2.2'),
-(154, '全記', '泡菜雞丁炒飯', 70, NULL, NULL, NULL, NULL, '10.0.2.2'),
-(155, '全記', '泡菜牛肉炒飯', 70, NULL, NULL, NULL, NULL, '10.0.2.2'),
-(156, '全記', '泡菜羊肉炒飯', 70, NULL, NULL, NULL, NULL, '10.0.2.2'),
+(153, '全記', '泡菜肉絲炒飯', 75, NULL, NULL, NULL, NULL, '10.0.2.2'),
+(154, '全記', '泡菜雞丁炒飯', 75, NULL, NULL, NULL, NULL, '10.0.2.2'),
+(155, '全記', '泡菜牛肉炒飯', 75, NULL, NULL, NULL, NULL, '10.0.2.2'),
+(156, '全記', '泡菜羊肉炒飯', 75, NULL, NULL, NULL, NULL, '10.0.2.2'),
 (157, '全記', '茄汁咖哩牛肉炒飯', 75, NULL, NULL, NULL, NULL, '10.0.2.2'),
 (158, '全記', '三杯雞丁炒飯', 65, NULL, NULL, NULL, NULL, '10.0.2.2'),
 (159, '全記', '三杯牛肉炒飯', 70, NULL, NULL, NULL, NULL, '10.0.2.2'),
 (160, '全記', '三杯羊肉炒飯', 70, NULL, NULL, NULL, NULL, '10.0.2.2'),
 (161, '全記', '蛋香炒麵', 55, NULL, NULL, NULL, NULL, '10.0.2.2'),
-(162, '全記', '清素炒麵', 55, NULL, NULL, NULL, NULL, '10.0.2.2'),
+(162, '全記', '清素炒麵', 60, NULL, NULL, NULL, NULL, '10.0.2.2'),
 (163, '全記', '肉絲炒麵', 60, NULL, NULL, NULL, NULL, '10.0.2.2'),
 (164, '全記', '蝦仁炒麵', 70, NULL, NULL, NULL, NULL, '10.0.2.2'),
-(165, '全記', '海鮮炒麵', 70, NULL, NULL, NULL, NULL, '10.0.2.2'),
+(165, '全記', '海鮮炒麵', 75, NULL, NULL, NULL, NULL, '10.0.2.2'),
 (166, '全記', '麻油豬肝炒麵', 65, NULL, NULL, NULL, NULL, '10.0.2.2'),
 (167, '全記', '麻婆豆腐炒麵', 65, NULL, NULL, NULL, NULL, '10.0.2.2'),
 (168, '全記', '宮保雞丁炒麵', 65, NULL, NULL, NULL, NULL, '10.0.2.2'),
@@ -326,7 +334,7 @@ INSERT INTO `menu` (`id`, `shopName`, `foodName`, `foodPrice`, `filename`, `file
 (228, '全記', '麻婆豆腐燴飯', 65, NULL, NULL, NULL, NULL, '10.0.2.2'),
 (229, '全記', '沙茶魷魚燴飯', 70, NULL, NULL, NULL, NULL, '10.0.2.2'),
 (230, '全記', '香菇雞丁燴飯', 65, NULL, NULL, NULL, NULL, '10.0.2.2'),
-(231, '全記', '清爽三鮮燴飯', 70, NULL, NULL, NULL, NULL, '10.0.2.2'),
+(231, '全記', '清爽三鮮燴飯', 75, NULL, NULL, NULL, NULL, '10.0.2.2'),
 (232, '全記', '宮保雞丁燴飯', 65, NULL, NULL, NULL, NULL, '10.0.2.2'),
 (233, '全記', '宮保牛肉燴飯', 70, NULL, NULL, NULL, NULL, '10.0.2.2'),
 (234, '全記', '宮保羊肉燴飯', 70, NULL, NULL, NULL, NULL, '10.0.2.2'),
@@ -348,14 +356,14 @@ INSERT INTO `menu` (`id`, `shopName`, `foodName`, `foodPrice`, `filename`, `file
 (250, '全記', '泡菜羊烏龍湯麵', 75, NULL, NULL, NULL, NULL, '10.0.2.2'),
 (251, '全記', '泡菜豬烏龍湯麵', 75, NULL, NULL, NULL, NULL, '10.0.2.2'),
 (252, '全記', '泡菜雞烏龍湯麵', 75, NULL, NULL, NULL, NULL, '10.0.2.2'),
-(253, '全記', '豬肉炒河粉', 65, NULL, NULL, NULL, NULL, '10.0.2.2'),
-(254, '全記', '雞丁炒河粉', 65, NULL, NULL, NULL, NULL, '10.0.2.2'),
-(255, '全記', '牛肉炒河粉', 75, NULL, NULL, NULL, NULL, '10.0.2.2'),
-(256, '全記', '羊肉炒河粉', 75, NULL, NULL, NULL, NULL, '10.0.2.2'),
-(257, '全記', '豬肉湯河粉', 65, NULL, NULL, NULL, NULL, '10.0.2.2'),
-(258, '全記', '雞丁湯河粉', 65, NULL, NULL, NULL, NULL, '10.0.2.2'),
-(259, '全記', '牛肉湯河粉', 75, NULL, NULL, NULL, NULL, '10.0.2.2'),
-(260, '全記', '羊肉湯河粉', 75, NULL, NULL, NULL, NULL, '10.0.2.2'),
+(253, '全記', '豬肉炒河粉', 70, NULL, NULL, NULL, NULL, '10.0.2.2'),
+(254, '全記', '雞丁炒河粉', 70, NULL, NULL, NULL, NULL, '10.0.2.2'),
+(255, '全記', '牛肉炒河粉', 70, NULL, NULL, NULL, NULL, '10.0.2.2'),
+(256, '全記', '羊肉炒河粉', 70, NULL, NULL, NULL, NULL, '10.0.2.2'),
+(257, '全記', '豬肉湯河粉', 70, NULL, NULL, NULL, NULL, '10.0.2.2'),
+(258, '全記', '雞丁湯河粉', 70, NULL, NULL, NULL, NULL, '10.0.2.2'),
+(259, '全記', '牛肉湯河粉', 70, NULL, NULL, NULL, NULL, '10.0.2.2'),
+(260, '全記', '羊肉湯河粉', 70, NULL, NULL, NULL, NULL, '10.0.2.2'),
 (261, '全記', '和風咖哩豬肉', 70, NULL, NULL, NULL, NULL, '10.0.2.2'),
 (262, '全記', '和風咖哩雞丁', 70, NULL, NULL, NULL, NULL, '10.0.2.2'),
 (263, '全記', '和風咖哩牛肉', 75, NULL, NULL, NULL, NULL, '10.0.2.2'),
@@ -568,7 +576,7 @@ CREATE TABLE IF NOT EXISTS `orderLog` (
   `orderDate` text NOT NULL,
   `userIp` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
 
 --
 -- 转存表中的数据 `orderLog`
@@ -579,7 +587,15 @@ INSERT INTO `orderLog` (`id`, `userName`, `groupId`, `foodName`, `foodCount`, `u
 (2, '許展榮', 1, '肉燥湯麵', 1, '加', NULL, 1, '2012-11-27', '134.208.9.54'),
 (3, '惠玲', 1, '綜合滷味(大)', 1, '正常', NULL, 1, '2012-11-27', '134.208.9.17'),
 (4, '惠汝', 1, '綜合滷味(大)', 1, '正常', '', 1, '2012-11-27', '134.208.9.37'),
-(5, '惠汝', 1, '豬油飯', 1, '正常', NULL, 1, '2012-11-27', '134.208.10.231');
+(5, '惠汝', 1, '豬油飯', 1, '正常', NULL, 1, '2012-11-27', '134.208.10.231'),
+(6, '小胖', 2, '肉絲炒飯', 1, '加', '這是舊菜單 有些東西可能會差5塊', 1, '2012-11-29', '134.208.10.231'),
+(7, '許展榮', 2, '泡菜羊肉炒麵', 1, '加', NULL, 1, '2012-11-29', '134.208.9.54'),
+(8, '力揮', 2, '糖醋雞丁炒飯', 1, '加', NULL, 1, '2012-11-29', '134.208.61.5'),
+(9, 'doremi', 2, '夏威夷炒飯', 1, '加', NULL, 1, '2012-11-29', '134.208.9.28'),
+(10, '李宇峰', 2, '沙茶羊肉炒麵', 1, '正常', NULL, 1, '2012-11-29', '134.208.9.94'),
+(11, '志偉', 2, '麻婆豆腐炒飯', 1, '正常', NULL, 1, '2012-11-29', '134.208.9.113'),
+(12, '惠汝', 2, '宮保羊肉炒飯', 1, '正常', NULL, 1, '2012-11-29', '134.208.9.37'),
+(13, '陳俏蒙', 2, '三杯雞丁燴飯', 1, '正常', NULL, 1, '2012-11-29', '134.208.9.143');
 
 -- --------------------------------------------------------
 
@@ -610,3 +626,7 @@ INSERT INTO `shop` (`id`, `shopName`, `shopPhone`, `deliveryCondition`, `userIp`
 (7, '好佳', '03-8662708', '300元以上', '10.0.2.2'),
 (8, '草屋', '0912-520394 / 0936-162231', '300元以上', '134.208.10.231'),
 (9, '哆知味燒臘', '03-8662861', '四份以上', '134.208.10.231');
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
