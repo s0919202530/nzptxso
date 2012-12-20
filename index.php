@@ -480,7 +480,7 @@ function fixScreen(layer) {
 						if ($result) {
 							while ( $row = mysql_fetch_assoc($result) ) {
 						?>
-								<input type="radio" id="create_shopName" name="create_shopName" value="<?php echo $row['shopName'] ?>"><label><?php echo $row['shopName'] ."&nbsp; 電話:" . "<font size=\"4\" color=\"FF0FFF\">" . $row['shopPhone'] . "</font>" . "&nbsp; 外送條件:"."<font size=\"4\" color=\"#228B22\">".$row5['deliveryCondition']. "</font>"; ?></label>
+								<input type="radio" id="create_shopName" name="create_shopName" value="<?php echo $row['shopName'] ?>"><label><?php echo $row['shopName'] ."&nbsp; 電話:" . "<font size=\"4\" color=\"FF0FFF\">" . $row['shopPhone'] . "</font>" . "&nbsp; 外送條件:"."<font size=\"4\" color=\"#228B22\">".$row['deliveryCondition']. "</font>"; ?></label>
 								<a href="menu.php?shopId=<?php echo $row['id'] ?>">新增菜單</a><br/>
 						<?php
 							}
