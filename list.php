@@ -93,7 +93,7 @@ if ((isset($_POST["insert"])) && ($_POST["insert"] == "49821032"))
 			mysql_select_db('lunch', $connection) or die('資料庫lunch不存在'); 
 			$totalPrice=0;
 			$hasPayed=0;
-			$query1 = "SELECT * FROM orderLog order by foodName"; 
+			$query1 = "SELECT * FROM orderLog order by id"; 
 			// 傳回結果集
 			$result1 = mysql_query($query1, $connection) or die(mysql_error());
 			if ($result1) {
