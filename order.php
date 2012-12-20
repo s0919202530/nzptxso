@@ -29,6 +29,7 @@ if(!empty($_SERVER['HTTP_CLIENT_IP'])){
 	date_default_timezone_set('Asia/Taipei');
 	$today=date("Y-m-d");
 	$now=date("H:i");
+	$nowDateTime=$today." ".$now;
 ?>
 
 <?php
@@ -46,7 +47,7 @@ if ((isset($_POST["insert"])) && ($_POST["insert"] == "notice"))
 	GetSQLValue($_POST['userName'], "text"), GetSQLValue($groupId, "int"),
 	GetSQLValue($_POST['foodName'], "text"), GetSQLValue($_POST['foodCount'], "int"),
 	GetSQLValue($_POST['userRemark'], "text"), GetSQLValue($_POST['userRemark1'], "text"),
-	GetSQLValue($today, "text"), GetSQLValue($userIp, "text") );
+	GetSQLValue($nowDateTime, "text"), GetSQLValue($userIp, "text") );
 		
 	// 傳回結果集
     $result = mysql_query($query, $connection) or die(mysql_error());
@@ -106,10 +107,9 @@ if ((isset($_POST["insert"])) && ($_POST["insert"] == "notice"))
 						// 傳回結果集
 						$result1 = mysql_query($query1, $connection) or die(mysql_error());
 						
-						$nowDateTime=$today." ".$now;
-						$orderDateTime=$row3['orderDate']." ".$row3['overTime'];
+						$orderDateTime=$row3['orderDate'];
 						
-						if(date("Y-m-d H:i",strtotime($nowDateTime))<date("Y-m-d H:i",strtotime($orderDateTime))) {
+						if(date("Y-m-d",strtotime($today))<=date("Y-m-d",strtotime($orderDateTime))) {
 						}
 						else {
 							header(sprintf("Location: %s", $_SESSION['PrevPage']));
