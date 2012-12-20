@@ -70,7 +70,7 @@ if ((isset($_POST["insert"])) && ($_POST["insert"] == "notice"))
 	
 	if ($result) {
 		if($groupId){ $uri="order.php?groupId=".$groupId; }
-		if($shopId){ $uri="create.php"; }
+		//if($shopId){ $uri="create.php"; }
 	    // 回到前一個網頁 
 	  	header(sprintf("Location: %s", $uri));
 	}
