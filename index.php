@@ -30,6 +30,7 @@ if(!empty($_SERVER['HTTP_CLIENT_IP'])){
 	$today=date("Y-m-d");
 	//$now=date("H:i:s");
 	$now=date("H:i");
+	$nowDateTime=$today." ".$now;
 ?>
 
 <?php
@@ -269,9 +270,9 @@ function fixScreen(layer) {
 					}
 					else {
 				?>
-					<td class="main_td">
-						訂購時間已過<br/>
-						結團時間為<?php echo $row['overTime'] ?>
+					<td>
+						<font style="background-color:#FF0000"><a href="order.php?groupId=<?php echo $row['id'] ?>">我要加訂(不保證來得及)</a></font><br/>
+						<font style="background-color:#FF0000">結團時間為<?php echo $row['overTime'] ?></font>
 					</td>
 				<?php
 					}
@@ -294,7 +295,7 @@ function fixScreen(layer) {
 			</tr>
 			
 			<?php
-			$query1 = "SELECT * FROM orderLog order by foodName"; 
+			$query1 = "SELECT * FROM orderLog order by id"; 
 			// 傳回結果集
 			$result1 = mysql_query($query1, $connection) or die(mysql_error());
 			if ($result1) {
@@ -302,17 +303,41 @@ function fixScreen(layer) {
 					if ($row1['groupId']==$row['id']) {
 			?>
 						<tr  class="main_tr">
-							<td bgColor="#E6E6FA" class="main_td">
-								<?php 
-									$temp1=$row1['foodName'];
-									echo $row1['userName'] . "&nbsp;" . $row1['foodCount'] . "個&nbsp;" . $row1['foodName'];
-									if($row1['userRemark']=="加") { echo "&nbsp;加"; }
-									if($row1['userRemark']=="減") { echo "&nbsp;減"; }
-									if($row1['userRemark']=="去冰") { echo "&nbsp;去冰"; }
-									if($row1['userRemark']=="少冰") { echo "&nbsp;少冰"; }
-									echo "&nbsp;<font size=\"4\" color=\"#FF4500\">".$row1['userRemark1']."</font>";
-								?>
-							</td>
+							<?php
+								$orderDateTime=$row['orderDate']." ".$row['overTime'];
+								$userOrderDateTime=$row1['orderDate'];
+								
+								if(date("Y-m-d H:i",strtotime($userOrderDateTime))<date("Y-m-d H:i",strtotime($orderDateTime))) {
+							?>
+									<td bgColor="#E6E6FA" class="main_td">
+										<?php 
+											$temp1=$row1['foodName'];
+											echo $row1['userName'] . "&nbsp;" . $row1['foodCount'] . "個&nbsp;" . $row1['foodName'];
+											if($row1['userRemark']=="加") { echo "&nbsp;加"; }
+											if($row1['userRemark']=="減") { echo "&nbsp;減"; }
+											if($row1['userRemark']=="去冰") { echo "&nbsp;去冰"; }
+											if($row1['userRemark']=="少冰") { echo "&nbsp;少冰"; }
+											echo "&nbsp;<font size=\"4\" color=\"#FF4500\">".$row1['userRemark1']."</font>";
+										?>
+									</td>
+							<?php
+								}
+								else {
+							?>
+									<td bgColor="#FF0000" class="main_td">
+										<?php 
+											$temp1=$row1['foodName'];
+											echo $row1['userName'] . "&nbsp;" . $row1['foodCount'] . "個&nbsp;" . $row1['foodName'];
+											if($row1['userRemark']=="加") { echo "&nbsp;加"; }
+											if($row1['userRemark']=="減") { echo "&nbsp;減"; }
+											if($row1['userRemark']=="去冰") { echo "&nbsp;去冰"; }
+											if($row1['userRemark']=="少冰") { echo "&nbsp;少冰"; }
+											echo "&nbsp;<font size=\"4\" color=\"#FF4500\">".$row1['userRemark1']."</font>";
+										?>
+									</td>
+							<?php
+								}
+							?>
 							<td bgColor="#E6E6FA" class="main_td">
 								<?php 
 									$query6 = "SELECT foodPrice FROM menu WHERE shopName = '$shopName' AND foodName = '$temp1' ";
