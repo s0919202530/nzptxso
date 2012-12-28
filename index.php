@@ -351,10 +351,10 @@ function fixScreen(layer) {
 								?>
 							</td>
 							<?php
-								if($userlevel==1) {
+								if($userlevel==1 || $userIp==$row1['userIp']) {
 							?>
 								<td class="main_td">
-									<input type="button" value="X" onclick="self.location.href='delete.php?groupId=<?php echo $row1['id'] ?>&userlevel=1'">
+									<input type="button" value="取消訂購" onclick="self.location.href='delete.php?groupId=<?php echo $row1['id'] ?>&userlevel=1'">
 								</td>
 							<?php
 								};
