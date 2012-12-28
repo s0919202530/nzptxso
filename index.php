@@ -207,6 +207,14 @@ function fixScreen(layer) {
 		$(layer).css({"left":getPosLeft,"top":getPosTop+mytop});
 	});
 }
+
+function delForm(id,userlevel)
+{
+	if( confirm("你確定要取消訂購嗎?") )
+	{
+		location.href="delete.php?groupId="+id+"&userlevel="+userlevel;
+	}
+}
 </script>
 	</head>
 
@@ -249,7 +257,7 @@ function fixScreen(layer) {
 					if($userlevel==1) {
 				?>
 					<td class="main_td">
-						<input type="button" value="X" onclick="self.location.href='delete.php?groupId=<?php echo $row['id'] ?>&userlevel=2'">
+						<input type="button" value="X" onclick="delForm(<?php echo $row['id'] ?>,2)">
 					</td>
 				<?php
 					};
@@ -351,10 +359,10 @@ function fixScreen(layer) {
 								?>
 							</td>
 							<?php
-								if($userlevel==1 || $userIp==$row1['userIp']) {
+								if( ($userlevel==1 || $userIp==$row1['userIp']) && (($nowTime[0]<$overTime[0]) || ($nowTime[0]==$overTime[0] && $nowTime[1]<$overTime[1])) ) {
 							?>
 								<td class="main_td">
-									<input type="button" value="取消訂購" onclick="self.location.href='delete.php?groupId=<?php echo $row1['id'] ?>&userlevel=1'">
+									<input type="button" value="取消訂購" onclick="delForm(<?php echo $row1['id'] ?>,1)">
 								</td>
 							<?php
 								};
